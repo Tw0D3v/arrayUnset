@@ -5,28 +5,30 @@
   <body>
     <?php 
 
-  $numArray = array();
-  $copiaArray = $numArray;
-  $numMayores = array();
+$arrayNum = Array();
+$numMenores = array();
+
 
 for ($valores = 0; $valores<=10; $valores++) {
   $numRandom = rand(1,100);
-  array_push($numArray, $numRandom);
+  array_push($arrayNum, $numRandom);
+}
+$copia = $arrayNum;
+
+foreach ($arrayNum as $key=>$num){
+    if ($copia[$key] <= 50){
+        unset($copia[$key]);
+          $numMenores[$num]=$copia[$key];
+     
+    }
 }
 
-foreach ($numArray as  $k=>$v){
-  if($copiaArray[$k]< 50){
-    unset($copiaArray[$k]);
-    $numMayores[$v] = $copiaArray[$k];
-  }
-}
 
-
-print_r($numArray);
-echo"<br>";
-print_r($copiaArray);
-echo"<br>";
-print_r($numMayores);
+print_r($numMenores);
+echo "<br>";
+print_r($copia);
+echo "<br>";
+print_r($arrayNum);
   ?> 
 
     <!--
